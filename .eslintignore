@@ -1,0 +1,6 @@
+node_modules/**
+dist/
+webpack
+babel.config.js
+project.config.js
+stylelint.config.js

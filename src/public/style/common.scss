@@ -1,0 +1,495 @@
+.error-icon {
+    display: block;
+    width: 64px;
+    height: 64px;
+    background: url(~@/public/images/alertBoxError.png) no-repeat;
+}
+
+.success-icon {
+    display: block;
+    width: 64px;
+    height: 64px;
+    background: url(~@/public/images/alertBoxSuccess.png) no-repeat;
+}
+
+.expire-icon {
+    display: block;
+    width: 64px;
+    height: 64px;
+    background: url(~@/public/images/alertBox-bg.png) no-repeat;
+}
+
+.out-level-icon {
+    display: block;
+    width: 140px;
+    height: 92px;
+    margin: 0 auto;
+    background: url(~@/public/images/SUPER.png) no-repeat ;
+    background-size: contain;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.level0-icon {
+    display: block;
+    width: 69px;
+    height: 67px;
+    margin: 0 auto;
+    background: url(~@/public/images/level0-icon.png) no-repeat ;
+    background-size: contain;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.level-yellow{
+    color: #eaa86e
+}
+
+
+.common-header-wrap {
+    height: 80px;
+    background-color: #FFF;
+
+    .super-member-icon {
+        float: left;
+        padding-top: 23px;
+        width: 184px;
+        height: 33px;
+        background: url(~@/public/images/suerMemberIcon.png) no-repeat bottom center;
+    }
+
+    .super-member-t {
+        float: right;
+        padding-top: 38px;
+    }
+
+    .super-member-t-i {
+        float: left;
+        display: inline;
+        margin-left: 40px;
+        border-bottom: 2px solid transparent;
+
+        &.active, &:hover {
+            border-bottom-color: #101010;
+
+            .super-member-t-i-c {
+                color: #101010;
+            }
+        }
+    }
+
+    .super-member-t-i-c {
+        display: block;
+        padding-bottom: 3px;
+        color: #666;
+        font-size: 18px;
+    }
+}
+
+.super-member-common {
+    min-width: 1200px;
+}
+
+.super-member-common-main {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.text-ellipsis2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.text-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.alert-box-shadow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99999;
+    background-color: #000;
+    filter: alpha(opacity=70);
+    opacity: .7;
+}
+
+.alert-box {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    z-index: 999999;
+    width: 392px;
+    height: 290px;
+    padding: 0 24px;
+    background-color: #FFF;
+    font-size: 18px;
+
+    .alert-title {
+        height: 40px;
+        line-height: 40px;
+    }
+
+    .alert-close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40px;
+        height: 40px;
+        background: url(~@/public/images/alertBoxClose.png) no-repeat center center;
+        cursor: pointer;
+        transition: transform .5s;
+
+        &:hover {
+            transform: rotate(180deg);
+        }
+    }
+
+    .alert-content {
+        padding: 15px 0 34px;
+        text-align: center;
+    }
+
+    .alert-btn-wrap {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 34px;
+        text-align: center;
+        .alert-btn {
+            display: inline-block;
+            width: 120px;
+            height: 40px;
+            margin: 0 10px;
+            color: #FFF;
+            line-height: 40px;
+            border-radius: 4px;
+        }
+
+        .ok-btn {
+            background-color: #2C2C2C;
+            box-shadow: 0px 3px 5px #000;
+        }
+
+        .cancel-btn {
+            background-color: #999;
+        }
+    }
+
+    .alert-box-common {
+        .success-icon, .error-icon, .expire-icon {
+            margin: 0 auto 18px;
+        }
+
+        .error-content, .success-content {
+            margin-bottom: 5px;
+            font-size: 22px;
+        }
+
+        .error-content {
+            color: #F46D6D;
+        }
+
+        .success-content {
+            color: #65B852;
+        }
+
+        .common-content {
+            color: #333;
+            .final-time{
+                font-weight: bold;
+                color: #333;
+            }
+            em{
+                color: red;
+                font-weight: bold;
+            }
+        }
+    }
+
+    &.creditScore{
+        width: 350px;
+        height: 400px;
+        padding: 0;
+        background: url('~@/public/images/credit-bg.png') center center no-repeat;
+
+        .alert-close {
+            background: url(~@/public/images/alertBoxClose2.png) no-repeat center center;
+        }
+        .alert-box-common{
+            .info{
+                margin-top: -42px;
+                text-align: left;
+                em{
+                    display: inline-block;
+                    color: #FFF;
+                    font-size: 40px;
+                    margin-left: 26px;
+                    font-weight: bold;
+                }
+                .info-status{
+                    display: inline-block;
+                    font-size: 16px;
+                    color: #FFC18B;
+                    display: inline-block;
+                    background: linear-gradient(#1A1A1A,#393939);
+                    width: 113px;
+                    height: 27px;
+                    line-height: 27px;
+                    border-radius: 1rem;
+                    vertical-align: super;
+                    i{
+                        content: "";
+                        display: inline-block;
+                        width: 51px;
+                        height: 30px;
+                        margin: -10px -22px 0 7px;
+                        background: url(~@/public/images/credit-normal-icon.png) no-repeat;
+                        background-size: contain;
+                        vertical-align: middle;
+                    }
+
+                    &.low{
+                        i{
+                            height: 25px;
+                            background: url(~@/public/images/credit-low-icon.png) no-repeat;
+                            background-size: contain;
+                            margin-right: -20px;
+                        }
+                    }
+
+                    &.good{
+                        i{
+                            width: 46px;
+                            height: 30px;
+                            background: url(~@/public/images/credit-good-icon.png) no-repeat;
+                            background-size: contain;
+                            margin-right: -16px;
+                            margin-top: -15px;
+                        }
+                    }
+
+                    &.excellent{
+                        i{
+                            background: url(~@/public/images/credit-excellent-icon.png) no-repeat;
+                            background-size: contain;
+                        }
+                    }
+                }
+            }
+            .tips{
+                font-size: 16px;
+                color: #FFC18B;
+                text-align: left;
+                margin-left: 30px;
+                margin-right: 30px;
+            }
+            .title{
+                position: absolute;
+                font-weight: bold;
+                text-align: center;
+                top: 40%;
+                left: 33%;
+                &::before{
+                    background: #999;
+                    content: '';
+                    position: absolute;
+                    top: 17px;
+                    left: -61px;
+                    width: 47px;
+                    height: 1px;
+                }
+
+                &::after{
+                    background: #999;
+                    content: '';
+                    position: absolute;
+                    top: 17px;
+                    right: -61px;
+                    width: 47px;
+                    height: 1px;
+                }
+            }
+            .main-content{
+                position: absolute;
+                top: 50%;
+                font-size: 14px;
+                line-height: 1.8;
+                text-align: left;
+                margin: 0 26px;
+            }
+            
+        }
+    }
+}
+
+.page-loading {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999999;
+
+    .page-loading-bg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+        background-color: #000;
+        filter: alpha(opacity=70);
+        opacity: .7;
+    }
+
+    .page-loading-icon {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        z-index: 3;
+        width: 220px;
+        height: 220px;
+        background: url(~@/public/images/pageLoading.gif) no-repeat center center;
+        margin-left: -110px;
+    }
+}
+
+.super-member-tool-btn-wrap {
+    position: fixed;
+    bottom: 100px;
+    left: 50%;
+    z-index: 5;
+    width: 46px;
+    height: 102px;
+    margin-left: 540px;
+
+    .suggest-btn, .to-top-btn, .service-btn {
+        display: block;
+        width: 60px;
+        height: 60px;
+        border-radius: 4px;
+    }
+
+    .suggest-btn {
+        margin-bottom: 10px;
+        background-position: 0 -144px;
+
+        &:hover {
+            background-position: 0 -212px;
+        }
+    }
+
+    .to-top-btn {
+        display: none;
+        background-position: -66px -144px;
+
+        &:hover {
+            background-position: -66px -212px;
+        }
+    }
+
+    .service-btn {
+        margin-bottom: 10px;
+        background-position: -134px -144px;
+
+        &:hover {
+            background-position: -134px -212px;
+        }
+    }
+}
+
+.message-detect-alert-box {
+    height: auto;
+    min-height: 260px;
+
+    .alert-content {
+        padding: 0;
+    }
+
+    .font-family-micr-yahei {
+        color: #333;
+    }
+
+    .message-detect-wrap {
+        width: 280px;
+        height: auto;
+        margin: 14px auto 0;
+        font-size: 16px;
+        font-family: "Microsofr Yahei";
+        font-weight: normal;
+
+        .tel-num {
+            float: left;
+            color: #333333;
+        }
+
+        a {
+            float: right;
+            color: #3591ef;
+            text-decoration: none;
+        }
+
+        .validate-code-wrap {
+            width: 100%;
+            margin-top: 12px;
+
+            input {
+                float: left;
+                width: 160px;
+                height: 36px;
+                line-height: 36px;
+                padding: 0 10px;
+                border: 1px solid rgb(204,204,204);
+                box-sizing: border-box;
+                color: #333;
+            }
+
+            button {
+                float: right;
+                width: 110px;
+                height: 36px;
+                line-height: 36px;
+                border: 1px solid rgb(245,88,89);
+                background-color: #ffffff;
+                color: rgb(245,88,89);
+                cursor: pointer;
+
+                &.disabled {
+                    border: 1px solid rgb(204,204,204);
+                    color: rgb(204,204,204);
+                }
+            }
+
+            button,
+            input {
+                font-family: "Microsofr Yahei";
+            }
+        }
+
+        .tips {
+            font-size: 14px;
+        }
+
+        .click-btn {
+            float: none;
+            display: inline-block;
+            width: 120px;
+            height: 40px;
+            margin: 10px 10px 0;
+            color: #FFF;
+            line-height: 40px;
+            border-radius: 4px;
+            background-color: #2C2C2C;
+            box-shadow: 0 3px 5px #000;
+        }
+    }
+}
+

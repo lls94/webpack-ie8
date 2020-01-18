@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="shortcut icon" href="//res.suning.cn/public/favicon.ico" type="image/x-icon">
+    <title>SUPER会员</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <script>
+        var sn = sn || {}
+    </script>
+    <!--if 在ftl文件里，若是使用会员头部，去掉该css-->
+    <link rel="stylesheet" href="//res.suning.cn/public/v3/css/??v3common.min.css,search.min.css,sn-sidebar.min.css?v=1994" />
+    <!--end-->
+    <link rel="stylesheet" type="text/css" href="//res.suning.cn/project/snprime/css/detect.css?v=1994">
+    <script>
+        var superMenberConfig = {
+            days: "0",
+            tryFlag: "1",
+            expireTime: "1545580800000",
+            froozenCloud: "0",
+            cloudValue: "529122",
+            cashbackCloudValue: "28500",
+            memberLevel: "0",
+            bigHeadPic: "",
+            smallHeadPic: "测试内容68ru",
+            remainFreePostageCouponNum: '-1', //312新需求，可用运费券数量
+            vipType: "0",
+            pictureServerUrl: 'http://10.24.25.229:3221', // 商品图前缀
+            snprimeBase: '',
+            toMyDiamondsUrl: "//vippre.cnsuning.com/ams-web/member/exchangeDetail.htm",
+            currentTime: "1517184000000",
+            neckName: "suning",
+            G200_ZQT: "0",
+            isRePay: '1', // 1 续费
+            canTryUseLevel: "4",
+            isDyBaseRecommend1: "0",
+            isDyBaseRecommend2: "0",
+            limitToVipDay: '18', //还有多少天显示续费按钮,
+            xufeiButtonContent: "续费额外赠送30天会员+30天PP视频",
+            ecologyPrice: 12,
+            levelPrice: 11,
+            miguEcologyPrice: 41,
+            miguLevelPrice: 66,
+            miguSuperFlag: 0, //咪咕双会员标识
+            limitToVipPlusDay: "1", // 咪咕会员还有多少天显示续费按钮
+            passport_config: {
+                base: 'https://signpre.cnsuning.com/sign-web/', // 必须换
+                loginTheme: "b2c"
+            },
+            priceList: [{
+                "price": 149.1,
+                "priceType": 2,
+                "goodsNo": "DA9221520581469"
+            }, {
+                "price": 199.1,
+                "priceType": 2,
+                "goodsNo": "SUPERMIGU199001"
+            }],
+            resRoot: "//res.suning.cn/project/snprime"
+        }
+    </script>
+
+</head>
+
+<body class="root1200">
+    <input type="hidden" id="pagename" value="pgcate=10004;pgtitle=SUPER会员">
+    <div class="super-member-index super-member-common">
+        <div class="header-floor"></div>
+        <div class="rights-list-floor"></div>
+        <div class="migu-floor"></div>
+        <div class="ad-list-floor"></div>
+        <div class="rights-banner-floor"></div>
+        <div class="super-recommond-goods-floor"></div>
+        <p class="no-more">没有更多啦～</p>
+    </div>
+    <div class="page-loading">
+        <div class="page-loading-bg"></div>
+        <div class="page-loading-icon"></div>
+    </div>
+    <!-- 计算器 -->
+    <div class="computer-dialog-wrap"></div>
+    <!-- 右侧工具 -->
+    <div class="super-member-tool-btn-wrap"></div>
+    <script src="//res.suning.cn/project/passport/js/passport.min.js?v=1994"></script>
+    <!--if 在ftl文件里，若是使用会员头部，去掉该js; 若是新的简易头部，加上该js-->
+    <script src="//res.suning.cn??/public/v3/js/jquery.js,/public/v3/js/sn_lazyload.js,/public/v3/js/lazyelem.min.js,/public/v3/js/SFE.base.min.js,/public/v3/js/search.min.js,/public/sidebar/build/js/sn-sidebar.min.js,/project/yunxin/js/chatCompat_mini.js?v=1994"></script>
+    <!--end-->
+    <script src="//res.suning.cn/javascript/sn_da/da_opt.js?v=1994"></script>
+    <script src="//res.suning.cn/javascript/sn_da/sa_click.js?v=1994"></script>
+    <script src="//dtpre.cnsuning.com/detect/dt/siller.js"></script>
+    <script src="//dtpre.cnsuning.com/detect/dt/detect.js"></script>
+    <script src="//dfppre.cnsuning.com/dfprs-collect/dist/fp.js"></script>
+    <script src="//res.suning.cn/javascript/sn_da/sa-analytics.js?v=1994"></script>
+    <script>
+        _dfp && _dfp.init({
+            appCode: 'zlL7HGjcGFqQ7j6n', // 必需修改
+            env: 'pre', // 必需修改
+            success: function(token) {
+                superMenberConfig.dfpToken = token;
+            },
+            error: function(e) {}
+        });
+    </script>
+</body>
+
+</html>

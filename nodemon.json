@@ -1,0 +1,5 @@
+{
+    "watch": ["./webpack","./project.config.js"],
+    "exec": "webpack-dev-server --config ./webpack/webpack.dev.js",
+    "delay": "1s"
+}
