@@ -2,12 +2,16 @@
 const { dartSass, isProd, MiniCssExtractPlugin, config } = require('./exports')
 
 const cssBaseLoaderArr = [{
-    // Creates `style` nodes from JS strings
-    loader: isProd || config.ie8 ? MiniCssExtractPlugin.loader : 'style-loader'
-}, {
-    // Translates CSS into CommonJS
-    loader: 'css-loader'
-}]
+        // Creates `style` nodes from JS strings
+        loader: isProd || config.ie8 ? MiniCssExtractPlugin.loader : 'style-loader'
+    }, {
+        // Translates CSS into CommonJS
+        loader: 'css-loader'
+    },
+    {
+        loader: 'postcss-loader'
+    }
+]
 
 module.exports = {
     eslintLoader: {
