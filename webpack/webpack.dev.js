@@ -30,7 +30,7 @@ let devConfig = {
         hot: config.hot,
         // writeToDisk: true
     },
-    devtool: 'inline-source-map',
+    devtool: 'source-map',
     plugins: [
         ...(config.hot ? [new webpack.HotModuleReplacementPlugin()] : []),
         new CircularDependencyPlugin({
@@ -65,7 +65,8 @@ let devConfig = {
         new FriendlyErrorsPlugin({
             compilationSuccessInfo: {
                 messages: [
-                    `app is running here http://localhost:${config.devServerPort}`,
+                    `app is running here http://localhost:${config.devServerPort}/index.html`,
+                    `app is running here http://localhost:${config.devServerPort}/webpack-dev-server/index.html`
                 ],
                 notes: [...(config.ie8 ? [chalk.cyan('ie8无热更新功能，更改后请手动刷新')] : [])],
             },

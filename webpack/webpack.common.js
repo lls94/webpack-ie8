@@ -7,7 +7,8 @@ let {
     LodashModuleReplacementPlugin,
     config,
     isProd,
-    webpack
+    webpack,
+    WorkboxPlugin
 } = require('./exports');
 
 const path = require('path');
@@ -96,6 +97,12 @@ module.exports = {
         ...getHtmlWebpackPlugins(),
         ...(isProd || config.ie8 ? [new MiniCssExtractPlugin()] : []), //提取css
         new LodashModuleReplacementPlugin(),
-        new DuplicatePackageCheckerPlugin() //检测重复依赖
+        new DuplicatePackageCheckerPlugin(), //检测重复依赖
+        new WorkboxPlugin.GenerateSW({
+            // 这些选项帮助 ServiceWorkers 快速启用
+            // 不允许遗留任何“旧的” ServiceWorkers
+            clientsClaim: true,
+            skipWaiting: true
+        })
     ]
-};
+}

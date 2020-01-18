@@ -20,6 +20,7 @@ module.exports = {
     merge: require("webpack-merge"),
     portfinder: require('portfinder'),
     isProd: process.env.NODE_ENV === 'production',
+    WorkboxPlugin: require('workbox-webpack-plugin'),
     UglifyJsPlugin: require('uglifyjs-webpack-plugin'),
     ManifestPlugin: require("webpack-manifest-plugin"),
     FileManagerPlugin: require("filemanager-webpack-plugin"),

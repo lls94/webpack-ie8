@@ -4,6 +4,7 @@ module.exports = {
     pagesRoot: path.resolve(__dirname, './src/pages'),
     entries: [
         'index',
+        'test'
         // {
         //     name: 'pay'
         // }
