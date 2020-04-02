@@ -30,9 +30,28 @@ let devConfig = {
         hot: config.hot,
         // writeToDisk: true
     },
-    devtool: 'source-map',
+    devtool: 'inline-source-map',
     plugins: [
         ...(config.hot ? [new webpack.HotModuleReplacementPlugin()] : []),
+        new FriendlyErrorsPlugin({
+            compilationSuccessInfo: {
+                messages: [
+                    `app is running here http://localhost:${config.devServerPort}`,
+                ],
+                notes: [...(config.ie8 ? [chalk.cyan('ie8无热更新功能，更改后请手动刷新')] : [])],
+            },
+            onErrors: function (severity, errors) {
+                // You can listen to errors transformed and prioritized by the plugin
+                // severity can be 'error' or 'warning'
+            },
+            // should the console be cleared between each compilation?
+            // default is true
+            clearConsole: true,
+
+            // add formatters and transformers (see below)
+            additionalFormatters: [],
+            additionalTransformers: [],
+        }),
         new CircularDependencyPlugin({
             // 循环引用检测
             exclude: /node_modules/,
@@ -62,26 +81,6 @@ let devConfig = {
                 }
             },
         }),
-        new FriendlyErrorsPlugin({
-            compilationSuccessInfo: {
-                messages: [
-                    `app is running here http://localhost:${config.devServerPort}/index.html`,
-                    `app is running here http://localhost:${config.devServerPort}/webpack-dev-server/index.html`
-                ],
-                notes: [...(config.ie8 ? [chalk.cyan('ie8无热更新功能，更改后请手动刷新')] : [])],
-            },
-            onErrors: function(severity, errors) {
-                // You can listen to errors transformed and prioritized by the plugin
-                // severity can be 'error' or 'warning'
-            },
-            // should the console be cleared between each compilation?
-            // default is true
-            clearConsole: true,
-
-            // add formatters and transformers (see below)
-            additionalFormatters: [],
-            additionalTransformers: [],
-        })
     ],
 };
 
