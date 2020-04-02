@@ -16,7 +16,6 @@ const superRecommondGoodsFloorTpl = require('./template/superRecommondGoodsFloor
 const goodsListTpl = require('./template/goodsList.tpl')
 
 import './main.scss'
-
 var superMemberIndex = {
     pageData: {},
     init: function() {
