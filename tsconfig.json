@@ -15,10 +15,11 @@
         "@images/*": ["./src/images/*"]
     },
     "include": [
-        "./src1/**/*"
+        "./typings",
+        "./src/views/**/*"
     ],
     "exclude": [
-        "./src/**/*",
-        "node_modules"
+        "node_modules",
+        "webpack"
     ]
 }

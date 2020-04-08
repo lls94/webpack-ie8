@@ -2,15 +2,15 @@
 const { dartSass, isProd, MiniCssExtractPlugin, config } = require('./exports')
 
 const cssBaseLoaderArr = [{
-        // Creates `style` nodes from JS strings
-        loader: isProd || config.ie8 ? MiniCssExtractPlugin.loader : 'style-loader'
-    }, {
-        // Translates CSS into CommonJS
-        loader: 'css-loader'
-    },
-    {
-        loader: 'postcss-loader'
-    }
+    // Creates `style` nodes from JS strings
+    loader: isProd || config.ie8 ? MiniCssExtractPlugin.loader : 'style-loader'
+}, {
+    // Translates CSS into CommonJS
+    loader: 'css-loader'
+},
+{
+    loader: 'postcss-loader'
+}
 ]
 
 module.exports = {
@@ -50,7 +50,8 @@ module.exports = {
         options: {
             // art-template options (if necessary)
             // @see https://github.com/aui/art-template
-            cache: true
+            debug: !isProd,
+            cache: isProd
         }
     }],
     babelLoader: [{
