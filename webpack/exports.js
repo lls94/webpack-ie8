@@ -18,7 +18,7 @@ module.exports = {
     dartSass: require("sass"),
     webpack: require("webpack"),
     merge: require("webpack-merge"),
-    portfinder: require('portfinder'),
+    portfinder: require('portfinder').basePort = config.devServerPort,
     isProd: process.env.NODE_ENV === 'production',
     WorkboxPlugin: require('workbox-webpack-plugin'),
     UglifyJsPlugin: require('uglifyjs-webpack-plugin'),

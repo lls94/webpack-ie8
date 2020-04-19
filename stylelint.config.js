@@ -1,3 +1,5 @@
+// http://stylelint.cn/
+// https://stylelint.io/
 module.exports = {
   extends: [
     'stylelint-prettier/recommended',

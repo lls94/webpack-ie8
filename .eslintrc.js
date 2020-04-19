@@ -1,3 +1,5 @@
+// https://eslint.org/
+// https://eslint.bootcss.com/
 module.exports = {
     env: {
         browser: true,
