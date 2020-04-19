@@ -1,8 +1,8 @@
 const path = require("path")
 module.exports = {
     entries: [
-        'index',
-        'pay',
+        // 'index',
+        // 'pay',
         'test',
         // {
         //     name: 'pay'

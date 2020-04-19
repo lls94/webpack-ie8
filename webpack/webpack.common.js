@@ -49,9 +49,11 @@ module.exports = {
                     ...(isProd
                         ? {
                               compress: {
-                                  drop_console: true,
-                                  drop_debugger: true,
-                                  pure_funcs: ['console.log'],
+                                  drop_console: isProd && !config.debug,
+                                  drop_debugger: isProd && !config.debug,
+                                  ...(isProd && !config.debug
+                                      ? {}
+                                      : { pure_funcs: ['console.log'] }),
                               },
                           }
                         : {}),

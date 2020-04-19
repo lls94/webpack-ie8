@@ -1,5 +1,6 @@
 const path = require('path')
 module.exports = {
+    debug:true,
     root: path.resolve(__dirname, './'),
     outputPath: path.resolve(__dirname, '../dist'),
     outputFileName: '[name].js?v=[hash:6]',
