@@ -48,13 +48,14 @@ module.exports = {
                     ie8: config.ie8,
                     ...(isProd
                         ? {
-                              compress: {
-                                  drop_console: isProd && !config.debug,
-                                  drop_debugger: isProd && !config.debug,
-                                  ...(isProd && !config.debug
-                                      ? {}
-                                      : { pure_funcs: ['console.log'] }),
-                              },
+                              compress:
+                                  isProd && !config.debug
+                                      ? {
+                                            drop_console: true,
+                                            drop_debugger: true,
+                                            pure_funcs: ['console.log'],
+                                        }
+                                      : {},
                           }
                         : {}),
                 },
