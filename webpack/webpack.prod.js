@@ -31,4 +31,5 @@ let prodConfig = {
     ],
 }
 
+// @ts-ignore
 module.exports = smp.wrap(merge(prodConfig, require('./webpack.common')))

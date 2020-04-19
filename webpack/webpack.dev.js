@@ -18,6 +18,7 @@ let commonConfig = require('./webpack.common')
 let getDevConfig = async function() {
     let port = await utils.getAvailablePorts()
     return {
+        mode: 'development',
         ...(config.hot
             ? {}
             : {

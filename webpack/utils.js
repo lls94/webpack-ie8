@@ -35,8 +35,8 @@ module.exports = {
         _.forEach(entriesConfig, entry => {
             const name = _.get(entry, 'name', entry)
             rtn[name] = [
-                path.resolve(config.pagesRoot, `./${name}/main.ts`), // 放到 第一个
                 ...fixJsArr,
+                path.resolve(config.pagesRoot, `./${name}/main.ts`), // 放到 第一个
             ]
         })
         return rtn
@@ -51,12 +51,13 @@ module.exports = {
             messages: Object.keys(entries)
                 .sort((next, prev) => next.length - prev.length)
                 .map(key => {
+                    let entry = entries[key]
                     return `${chalk.redBright(key)} ${chalk.rgb(...color1)(
                         '---->'
                     )} ${chalk.blueBright(
                         `http://localhost:${port}/${key}.html`
                     )}  ${
-                        chalk.rgb(255, 167, 0)(entries[key][0])
+                        chalk.rgb(255, 167, 0)(entry[entry.length - 1])
                         // path
                         // .relative(__dirname, entries[key][0])
                         // .split(path.sep)
