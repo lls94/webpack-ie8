@@ -9,9 +9,6 @@ let {
 
 let prodConfig = {
     mode: "production",
-    output: {
-        filename: "[name].[chunkhash:6].js"
-    },
     plugins: [
         new webpack.DefinePlugin({
             "process.env.NODE_ENV": JSON.stringify("production")

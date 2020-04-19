@@ -1,5 +1,3 @@
-console.log(require('./common.config'))
-
 let presets = [
     [
         "@babel/preset-env",
