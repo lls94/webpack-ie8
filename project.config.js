@@ -3,7 +3,7 @@ module.exports = {
     entries: [
         // 'index',
         // 'pay',
-        'test',
+        'test'
         // {
         //     name: 'pay'
         // }

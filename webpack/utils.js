@@ -3,10 +3,27 @@ const config = require('./config')
 const { portfinder, chalk } = require('./exports')
 const _ = require('lodash')
 const path = require('path')
-const projectConfig = require('../project.config')
-
-const hrefColor = [0, 0, 204]
 const color1 = [255, 245, 0]
+
+function dealEntries(entries) {
+    let entryBaseConfig = {
+        // name:'index',
+        ext: 'ts',
+    }
+
+    return _.map(entries, entry => {
+        if (_.isString(entry)) {
+            return _.assign({}, entryBaseConfig, {
+                name: entry,
+            })
+        } else if (_.isObject(entry)) {
+            return _.assign({}, entryBaseConfig, entry)
+        }
+    })
+}
+
+const projectConfig = require('../project.config')
+projectConfig.entries = dealEntries(projectConfig.entries)
 
 let { fixJsArr = [] } = config
 
@@ -32,13 +49,20 @@ module.exports = {
     getEntries: _.once(entriesConfig => {
         let rtn = {}
         entriesConfig = entriesConfig || projectConfig.entries
+
         _.forEach(entriesConfig, entry => {
             const name = _.get(entry, 'name', entry)
-            rtn[name] = [
+            const ext = _.get(entry, 'ext', 'ts')
+
+            let _temp = [
                 ...fixJsArr,
-                path.resolve(config.pagesRoot, `./${name}/main.ts`), // 放到 第一个
+                path.resolve(config.pagesRoot, `./${name}/main.${ext}`), // 放到 最后一个
             ]
+
+            _temp['initConfig'] = entry
+            rtn[name] = _temp
         })
+        
         return rtn
     }),
     async getAvailablePorts() {
@@ -56,13 +80,7 @@ module.exports = {
                         '---->'
                     )} ${chalk.blueBright(
                         `http://localhost:${port}/${key}.html`
-                    )}  ${
-                        chalk.rgb(255, 167, 0)(entry[entry.length - 1])
-                        // path
-                        // .relative(__dirname, entries[key][0])
-                        // .split(path.sep)
-                        // .join('/')
-                    }`
+                    )}  ${chalk.rgb(255, 167, 0)(entry[entry.length - 1])}`
                 }),
             notes: [
                 ...(config.ie8

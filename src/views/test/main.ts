@@ -3,7 +3,7 @@
 // alert(Math.floor(5.9) === Math.ceil(4.1)) //true
 // alert(Math.abs(-1.234)===Math.abs(1.234)) // true
 import './test.scss'
-document.body.innerHTML= require('./template/test.tpl')()
+document.body.innerHTML = require('./template/test.tpl')()
 
 // console.log(1)
 // setTimeout(() => {
@@ -19,7 +19,7 @@ document.body.innerHTML= require('./template/test.tpl')()
 // })
 // console.log(6)
 
-var x = 5;
+var x = 5
 console.log(x++ + ++x)
 console.log(++x * --x)
 console.log(x)

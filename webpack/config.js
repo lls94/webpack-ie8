@@ -15,5 +15,5 @@ module.exports = {
     hot: false,
     extensions: ['.js', '.ts'],
     devServerPort: 9000, //服务器端口号
-    openEslintLoader: false, // 是否打开eslint
+    openEslintLoader: true, // 是否打开eslint
 }
